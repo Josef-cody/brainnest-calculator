@@ -58,6 +58,7 @@ td .display-input-box {
     justify-content: space-around;
     align-items: flex-end;
     margin-right: 1rem;
+    border: 2px solid #004147;
 }
 
 .container {
@@ -67,8 +68,8 @@ td .display-input-box {
     padding: 1rem;
     background: linear-gradient(330deg, #004147 20%, #84cce0 100%, #004147 20%);
     border-radius: 30px;
-    filter: drop-shadow(5px 5px 5px #84cce099);
-    border: 3px solid #004147;
+    border: 5px solid #e1fcff;
+    box-shadow: 5px 5px 5px #ffffff78;
 }
 
 
