@@ -14,13 +14,13 @@
         <tr>
         <td colspan="3">
             <div class="display-container">
-            <p class="display-input-box" type="text" id="user-input"/></p>
+            <p class="display-input-box" type="text" id="user_input"/></p>
             <p class="display-box" type="text" id="result"/></p>
             </div>
         </td>
         
         <!-- clearScreen() function clears all the values -->
-        <td><button type="button" value="C" onclick="clearDisplay()" id="btn" />C</button></td>
+        <td><button type="button" onclick="clearDisplay()" id="btn" />C</button></td>
         </tr>
         <tr>
         <!-- display() function displays the value of clicked button -->
@@ -46,7 +46,7 @@
         <td><button type="button" value="0"/>0</button></td>
     
         <!-- calculate() function evaluates the mathematical expression -->
-        <td><button type="button" value="=" id="btn" />=</button></td>
+        <td><button type="button" id="btn" onclick=result()/>=</button></td>
         <td><button type="button" value="*"/>*</button></td>
         </tr>
         </table>
