@@ -26,6 +26,7 @@ class Calculator {
         let calculation
         let prev = parseFloat(this.preOperand)
         let current = parseFloat(this.currOperand)
+        if (isNaN(prev) || isNaN(current)) return
         switch (this.oper) {
             case '+':
                 calculation = prev + current
@@ -93,7 +94,11 @@ document.addEventListener('keypress', (e) => {
             calculator.display()
             break;
         case (`Period` || `NumpadDecimal`):
-            calculator.choseOpre('.')
+            calculator.appendNumber('.')
+            calculator.display()
+            break;
+        case (`Multiply` || `NumpadMultiply`):
+            calculator.choseOpre('*')
             calculator.display()
             break;
     }
