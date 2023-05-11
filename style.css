@@ -26,13 +26,13 @@ button {
     font-size: 1.2rem;
     padding: 1em 2rem;
     border: transparent;
-    box-shadow: -2px -2px 7px rgba(202, 248, 255, 0.8),2px 2px 7px rgba(0, 0, 0, 0.6);
+    box-shadow: -2px -2px 7px rgba(137, 239, 255, 0.8),2px 2px 7px rgba(0, 68, 77, 0.6);
     background: #004147;
     color: white;
     border-radius: 4px;
 }
 button:hover {
-    transform: scale(1.1);
+    transform: scale(0.95);
     background: rgb(2, 0, 36);
     background: linear-gradient(30deg, #004147 20%, #84cce0 100%, #004147 20%);
 }
