@@ -22,6 +22,9 @@ class Calculator {
         this.preOperand = this.currOperand
         this.currOperand = ''
     }
+    delete () {
+        this.currOperand = this.currOperand.toString().slice(0, -1)
+    }
     calculate() {
         let calculation
         let prev = parseFloat(this.preOperand)
@@ -59,6 +62,7 @@ const numberButtons = document.querySelectorAll('[data-number]')
 const operButtons = document.querySelectorAll('[data-oper]')
 const equalsButton = document.querySelector('[data-equals]')
 const clearButton = document.querySelector('[data-clear]')
+const deleteButton = document.querySelector('[data-delete]')
 const dataPre = document.querySelector('[data-pre]')
 const dataCurr = document.querySelector('[data-curr]')
 
@@ -70,7 +74,7 @@ numberButtons.forEach(button => {
         calculator.display()
     })
 })
-document.addEventListener('keypress', (e) => {
+document.addEventListener('keydown', (e) => {
     for (let i = 0; i <= 9; i++) {
         switch (e.code) {
             case (`Digit${i}` || `Numpad${i}`):
@@ -78,7 +82,6 @@ document.addEventListener('keypress', (e) => {
                 calculator.display()
                 break;
         }
-
     }
     switch (e.code) {
         case (`Slash` || 'NumpadDivide'):
@@ -120,9 +123,21 @@ equalsButton.addEventListener('click', button => {
     calculator.calculate()
     calculator.display()
 })
-document.addEventListener('keypress', (e) => {
-    if(e.code=='Equal' || e.code =='Enter' || e.code == 'NumpadEqual'){
+document.addEventListener('keydown', (e) => {
+    if(e.code=='Equal' || e.code == 'NumpadEqual'){
         calculator.calculate()
         calculator.display()
     }
 })
+
+deleteButton.addEventListener('click', button => {
+    calculator.delete()
+    calculator.display()
+})
+document.addEventListener('keydown', (e) => {
+    if(e.code == 'Backspace' || e.code == 'NumpadDel'){
+        calculator.delete()
+        calculator.display()
+    }
+})
+

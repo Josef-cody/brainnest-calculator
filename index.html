@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css" >
-    <script src="./index.js" type="text/javascript" defer ></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" type="text/javascript" defer></script>
     <title>Calculator</title>
 </head>
+
 <body>
     <main class="main">
-    <table class="container" >
-        <tr>
-        <td colspan="3">
-            <div class="display-container">
-            <p class="display-input-box" type="text" data-pre></p>
-            <p class="display-box" type="text" data-curr></p>
-            </div>
-        </td>
-        
-        <!-- clears all the values -->
-        <td><button type="button" data-clear>AC</button></td>
-        </tr>
-        <tr>
-        <!--  displays the value of clicked button -->
-        <td><button type="button" data-number>1</button></td>
-        <td><button type="button" data-number>2</button></td>
-        <td><button type="button" data-number>3</button></td>
-        <td><button type="button" data-oper>/</button></td>
-        </tr>
-        <tr>
-        <td><button type="button" data-number>4</button></td>
-        <td><button type="button" data-number>5</button></td>
-        <td><button type="button" data-number>6</button></td>
-        <td><button type="button" data-oper>-</button></td>
-        </tr>
-        <tr>
-        <td><button type="button" data-number>7</button></td>
-        <td><button type="button" data-number>8</button></td>
-        <td><button type="button" data-number>9</button></td>
-        <td><button type="button" data-oper>+</button></td>
-        </tr>
-        <tr>
-        <td><button type="button" data-number>.</button></td>
-        <td><button type="button" data-number>0</button></td>
-    
-        <td><button type="button" data-equals>=</button></td>
-        <td><button type="button" data-oper>*</button></td>
-        </tr>
+        <table class="container">
+            <tr>
+                <td colspan="4">
+                    <div class="display-container">
+                        <p class="display-input-box" type="text" data-pre></p>
+                        <p class="display-box" type="text" data-curr></p>
+                    </div>
+                </td>
+
+                <!-- clears all the values -->
+
+            </tr>
+            <tr>
+                <!--  displays the value of clicked button -->
+                <td><button type="button" data-number>1</button></td>
+                <td><button type="button" data-number>2</button></td>
+                <td><button type="button" data-number>3</button></td>
+                <td><button type="button" data-clear>C</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" data-number>4</button></td>
+                <td><button type="button" data-number>5</button></td>
+                <td><button type="button" data-number>6</button></td>
+                <td><button type="button" data-oper>-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" data-number>7</button></td>
+                <td><button type="button" data-number>8</button></td>
+                <td><button type="button" data-number>9</button></td>
+                <td><button type="button" data-oper>+</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" data-number> .</button></td>
+                <td><button type="button" data-number>0</button></td>
+                <td><button type="button" data-number><span class="dubbleZero">00</span></button></td>
+                <td><button type="button" data-oper>/</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="button"  class="del" data-delete>Del</button></td>
+                <td><button type="button" data-equals>=</button></td>
+                <td><button type="button" data-oper>*</button></td>
+            </tr>
         </table>
     </main>
 </body>
+
 </html>
