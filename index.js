@@ -9,10 +9,12 @@ class Calculator {
         this.preOperand = ''
         this.oper = undefined
     }
+    //append user input
     appendNumber(number) {
         if (number === '.' && this.currOperand.includes('.')) return
         this.currOperand = this.currOperand.toString() + number.toString()
     }
+    //operation input
     choseOpre(oper) {
         if (this.currOperand === '') return
         if (this.preOperand !== '') {
@@ -22,9 +24,11 @@ class Calculator {
         this.preOperand = this.currOperand
         this.currOperand = ''
     }
-    delete () {
+    //delete previous number
+    delete() {
         this.currOperand = this.currOperand.toString().slice(0, -1)
     }
+    //calculate number
     calculate() {
         let calculation
         let prev = parseFloat(this.preOperand)
@@ -51,13 +55,14 @@ class Calculator {
         this.oper = undefined
         this.preOperand = ''
     }
+    //display number and result
     display() {
         this.dataCurr.innerText = this.currOperand
         this.dataPre.innerText = this.preOperand
-
     }
 }
 
+//global variables 
 const numberButtons = document.querySelectorAll('[data-number]')
 const operButtons = document.querySelectorAll('[data-oper]')
 const equalsButton = document.querySelector('[data-equals]')
@@ -66,14 +71,17 @@ const deleteButton = document.querySelector('[data-delete]')
 const dataPre = document.querySelector('[data-pre]')
 const dataCurr = document.querySelector('[data-curr]')
 
+
 const calculator = new Calculator(dataPre, dataCurr)
 
+//loop out number buttons listener
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
         calculator.display()
     })
 })
+//keyboard input listener
 document.addEventListener('keydown', (e) => {
     for (let i = 0; i <= 9; i++) {
         switch (e.code) {
@@ -107,6 +115,7 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
+//operation button loop
 operButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.choseOpre(button.innerText)
@@ -114,28 +123,31 @@ operButtons.forEach(button => {
     })
 })
 
+//clear display button listener
 clearButton.addEventListener('click', button => {
     calculator.clear()
     calculator.display()
 })
 
+//calculate result button listener
 equalsButton.addEventListener('click', button => {
     calculator.calculate()
     calculator.display()
 })
 document.addEventListener('keydown', (e) => {
-    if(e.code=='Equal' || e.code == 'NumpadEqual'){
+    if (e.code == 'Equal' || e.code == 'NumpadEqual') {
         calculator.calculate()
         calculator.display()
     }
 })
 
+//delete button listener
 deleteButton.addEventListener('click', button => {
     calculator.delete()
     calculator.display()
 })
 document.addEventListener('keydown', (e) => {
-    if(e.code == 'Backspace' || e.code == 'NumpadDel'){
+    if (e.code == 'Backspace' || e.code == 'NumpadDel') {
         calculator.delete()
         calculator.display()
     }
