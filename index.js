@@ -84,30 +84,54 @@ numberButtons.forEach(button => {
 document.addEventListener('keydown', (e) => {
     for (let i = 0; i <= 9; i++) {
         switch (e.code) {
-            case (`Digit${i}` || `Numpad${i}`):
+            case (`Digit${i}`):
+                calculator.appendNumber(i)
+                calculator.display()
+                break;
+            case (`Numpad${i}`):
                 calculator.appendNumber(i)
                 calculator.display()
                 break;
         }
     }
     switch (e.code) {
-        case (`Slash` || 'NumpadDivide'):
+        case ('Slash'):
             calculator.choseOpre('/')
             calculator.display()
             break;
-        case (`Minus` || `NumpadSubtract`):
+        case ('NumpadDivide'):
+            calculator.choseOpre('/')
+            calculator.display()
+            break;
+        case (`Minus`):
             calculator.choseOpre('-')
             calculator.display()
             break;
-        case (`Add` || `NumpadAdd`):
+        case (`NumpadSubtract`):
+            calculator.choseOpre('-')
+            calculator.display()
+            break;
+        case (`Add`):
             calculator.choseOpre('+')
             calculator.display()
             break;
-        case (`Period` || `NumpadDecimal`):
+        case (`NumpadAdd`):
+            calculator.choseOpre('+')
+            calculator.display()
+            break;
+        case (`Period`):
             calculator.appendNumber('.')
             calculator.display()
             break;
-        case (`Multiply` || `NumpadMultiply`):
+        case (`NumpadDecimal`):
+            calculator.appendNumber('.')
+            calculator.display()
+            break;
+        case (`Multiply`):
+            calculator.choseOpre('*')
+            calculator.display()
+            break;
+        case (`NumpadMultiply`):
             calculator.choseOpre('*')
             calculator.display()
             break;
@@ -134,7 +158,7 @@ equalsButton.addEventListener('click', button => {
     calculator.display()
 })
 document.addEventListener('keydown', (e) => {
-    if (e.code == 'Equal' || e.code == 'NumpadEqual') {
+    if (e.code == 'Equal' || e.code == 'Enter') {
         calculator.calculate()
         calculator.display()
     }
@@ -146,9 +170,12 @@ deleteButton.addEventListener('click', button => {
     calculator.display()
 })
 document.addEventListener('keydown', (e) => {
-    if (e.code == 'Backspace' || e.code == 'NumpadDel') {
+    if (e.code == 'Backspace') {
         calculator.delete()
         calculator.display()
     }
+})
+document.addEventListener('keydown', (e) => {
+    console.log(e.code )
 })
 
