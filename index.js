@@ -1,3 +1,12 @@
+//global variables 
+const numberButtons = document.querySelectorAll('[data-number]')
+const operButtons = document.querySelectorAll('[data-oper]')
+const equalsButton = document.querySelector('[data-equals]')
+const clearButton = document.querySelector('[data-clear]')
+const deleteButton = document.querySelector('[data-delete]')
+const dataPre = document.querySelector('[data-pre]')
+const dataCurr = document.querySelector('[data-curr]')
+
 class Calculator {
     constructor(dataPre, dataCurr) {
         this.dataPre = dataPre
@@ -61,16 +70,6 @@ class Calculator {
         this.dataPre.innerText = this.preOperand
     }
 }
-
-//global variables 
-const numberButtons = document.querySelectorAll('[data-number]')
-const operButtons = document.querySelectorAll('[data-oper]')
-const equalsButton = document.querySelector('[data-equals]')
-const clearButton = document.querySelector('[data-clear]')
-const deleteButton = document.querySelector('[data-delete]')
-const dataPre = document.querySelector('[data-pre]')
-const dataCurr = document.querySelector('[data-curr]')
-
 
 const calculator = new Calculator(dataPre, dataCurr)
 
